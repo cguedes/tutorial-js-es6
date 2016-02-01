@@ -4,8 +4,8 @@
   "description": "Tutorial on ES6",
   "main": "index.js",
   "scripts": {
-    "build": "cp -Rn ./node_modules/qunitjs/qunit ./dist/qunit && babel src -d lib && webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cp -R ./node_modules/qunitjs/qunit ./dist/qunit && cp -R ./src/index.html ./dist && babel src/js -d lib && webpack",    
+    "test": "watch 'npm run build' src & browser-sync start --server dist --files 'dist/*'"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,9 @@
   "devDependencies": {
     "babel-cli": "^6.4.5",
     "babel-preset-es2015": "^6.3.13",
+    "browser-sync": "^2.11.1",
     "qunitjs": "^1.20.0",
+    "watch": "^0.17.1",
     "webpack": "^2.0.6-beta"
   }
 }
