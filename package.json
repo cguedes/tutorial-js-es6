@@ -4,6 +4,7 @@
   "description": "Tutorial on ES6",
   "main": "index.js",
   "scripts": {
+    "build": "cp -Rn ./node_modules/qunitjs/qunit ./dist/qunit && babel src -d lib && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,8 @@
   "homepage": "https://github.com/pmhsfelix/tutorial-js-es6#readme",
   "devDependencies": {
     "babel-cli": "^6.4.5",
-    "babel-preset-es2015": "^6.3.13"
+    "babel-preset-es2015": "^6.3.13",
+    "qunitjs": "^1.20.0",
+    "webpack": "^2.0.6-beta"
   }
 }
