@@ -18,13 +18,13 @@ We're going to use the following folder layout:
 
 Create the babel configuration file to include the `es2015` preset.
 
-~~~
-`echo '{ "presets": ["es2015"] }' > .babelrc`
+~~~bash
+echo '{ "presets": ["es2015"] }' > .babelrc
 ~~~
 
 Create the webpack configuration
 
-~~~
+~~~javascript
 module.exports = {
   context: './lib', // the module location
   entry: './index.js',
@@ -37,7 +37,7 @@ module.exports = {
 
 Create the main HTML file `index.html`
 
-~~~
+~~~html
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +59,7 @@ This file includes the QUnit CSS and JS files as well as the `bundle.js` with al
 
 Create the main javascript file `src/index.js`. Add a `import` for any test file.
 
-~~~
+~~~javascript
 import * as tests from './test_modules'
 ~~~
 
@@ -67,7 +67,7 @@ In this example, the `./test_modules.js` contains all the module related tests.
 
 Add the following command to the `package.config` `scripts` property
 
-~~~
+~~~javascript
 "build": "cp -R ./node_modules/qunitjs/qunit ./dist/qunit && babel src -d lib && webpack",
 ~~~
 
@@ -79,7 +79,7 @@ This will:
 
 Add the following command to the `package.config` `scripts` property
 
-~~~
+~~~javascript
 "test": "watch 'npm run build' src & browser-sync start --server dist --files 'dist/*'"
 ~~~
 
