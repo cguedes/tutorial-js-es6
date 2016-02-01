@@ -43,13 +43,13 @@ Create the main HTML file `index.html`
 <head>
   <meta charset="utf-8">
   <title>QUnit basic example</title>
-  <link rel="stylesheet" href="dist/qunit/qunit.css">
+  <link rel="stylesheet" href="qunit/qunit.css">
 </head>
 <body>
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
-  <script src="dist/qunit/qunit.js"></script>
-  <script src="dist/bundle.js"></script>
+  <script src="qunit/qunit.js"></script>
+  <script src="bundle.js"></script>  
 </body>
 </html>
 ~~~
