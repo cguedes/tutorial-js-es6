@@ -12,9 +12,9 @@ Install the following NPM packages:
 We're going to use the following folder layout:
 
 * `src` contains the HTML source file.
-* `src/js` contains the ES source files
-* `lib` contains the transpiled javascript files
-* `dist` contains the bundled javascript files, as well as additional files (QUnit javascript and CSS), ready for browser consuption
+* `src/js` contains the ES6 source files.
+* `lib` contains the transpiled javascript files.
+* `dist` contains the bundled javascript files, as well as additional files (QUnit javascript and CSS), ready for browser consuption.
 
 Create the babel configuration file to include the `es2015` preset.
 
@@ -68,7 +68,7 @@ In this example, the `./test_modules.js` contains all the module related tests.
 Add the following command to the `package.config` `scripts` property
 
 ~~~
-"build": "cp -Rn ./node_modules/qunitjs/qunit ./dist/qunit && babel src -d lib && webpack",
+"build": "cp -R ./node_modules/qunitjs/qunit ./dist/qunit && babel src -d lib && webpack",
 ~~~
 
 This will:
@@ -85,5 +85,5 @@ Add the following command to the `package.config` `scripts` property
 
 This will:
 
-* Start watching changes on the src folder that will trigger the build process.
-* Launch the browser-sync static file server, serving from and watching changes on the `dist` folder.
+* Start watching changes on the `src` folder that will trigger the build process.
+* Launch the `browser-sync` static file server, serving from and watching changes on the `dist` folder.
